@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inventory · Add & View Products</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <div class="form-section">
+      <img src="logo.jpg" height="50" width="55">
+      <h1>logiTrack</h1><br><br>
+      
+      <h2> Add Product</h2>
+      <form id="productForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Name <span class="required">*</span></label>
+            <input type="text" id="prodName" placeholder="e.g. Unisex T-Shirt White" required>
+          </div>
+          <div class="form-group">
+            <label>Item code <span class="required">*</span></label>
+            <input type="text" id="prodCode" placeholder="SKU-12345" required>
+          </div>
+          <div class="form-group">
+            <label>Stock size <span class="required">*</span></label>
+            <input type="number" id="prodQty" min="0" value="0" required>
+          </div>
+          <div class="form-group">
+            <label>Price <span class="required">*</span></label>
+            <input type="number" id="prodPrice" min="0" step="0.01" placeholder="0.00" required>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-cancel" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn btn-save">Save Product</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="products-section">
+      <div class="section-header">
+        <h2> Saved Products</h2>
+        <span id="productCount">0 items</span>
+      </div>
+      
+      <div class="table-wrapper">
+        <table id="productTable">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Item Code</th>
+              <th>Stock</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      
+      <div id="emptyMessage" class="empty-message">
+        No products yet. Add one using the form above.
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
